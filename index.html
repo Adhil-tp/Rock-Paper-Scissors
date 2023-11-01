@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
 </head>
 <body>
     <style>
         .main{
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
         }
         .container{
+            margin: 0;
             height: 400px;
             width: 600px;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             column-gap: 50px;
             border: 2px solid red;
             border-radius: 15px;
+        }
+        .Game{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 600px;
         }
         img{
             width: 100px;
@@ -32,16 +40,56 @@
             padding: 20px;
             border-radius: 15px;
             height: 100px;
+        }.head{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            height: 50px;
+        }
+        .points, .selected{
+            height: 50px;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            justify-content: space-around;
+            width: 100%;
+        }
+        .selected{
+            display: flex;
+            justify-content: space-evenly;
         }
     </style>
-
+    <div class="head">
+        <h1>Winner :<span class="heading"></span></h1>
+    </div>
     <div class="main">
         <div class="container">
-            <button class="button">Rock</button>
-            <button class="button">Paper</button>
-            <button class="button">Scissor</button>            
+            <div class="Round">
+                <h1>Round : <span class="Roundnumber">0</span></h1>
+            </div>
+            <div class="selected">
+                <h5 class="human">Human: <span class="human-choice"></span></h5>
+                <h5 class="computer">Computer: <span class="computer-choice"></span></h5>
+            </div>
+            <div class="points">
+                <h1>Human :<span class="humanpoint">0</span></h1>
+                <h1>computer :<span class="computerpoint">0</span></h1>
+            </div>
+            <div class="Game">
+                <div class="card-image">
+                    <img src="images/Rock.svg" alt="Rock" class="button" data-value="ROCK"> 
+                </div>
+                <div class="card-image">
+                    <img src="images/Paper.svg" alt="Paper" class="button" data-value="PAPER"> 
+                </div>
+                <div class="card-image">
+                    <img src="images/Scissor.svg" alt="Scissor" class="button" data-value="ROCK">           
+                </div>
+            </div>
         </div>
     </div>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>
